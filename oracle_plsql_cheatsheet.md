@@ -143,3 +143,13 @@ BEGIN
 END;
 ```
 
+###Function returning sys_refcursor
+```
+FUNCTION RETURN_CURSOR RETURN SYS_REFCURSOR IS
+   v_rc sys_refcursor;
+BEGIN
+   open v_rc for 'select * FROM dual';
+   return v_rc;
+END;
+```
+
