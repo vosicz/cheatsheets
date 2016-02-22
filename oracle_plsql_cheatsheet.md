@@ -135,7 +135,7 @@ BEGIN
       
       l_cursor := dbms_sql.open_cursor;
       dbms_sql.parse( l_cursor,
-                      'INSERT INTO BA_MIGRATION_VALIDATION_LOG(subject, message) VALUES(:table_subject, :table_message)',
+                      'INSERT INTO le_table(subject, message) VALUES(:table_subject, :table_message)',
                        dbms_sql.native );
        dbms_sql.bind_array( l_cursor, ':table_subject', table_subject );
        dbms_sql.bind_array( l_cursor, ':table_message', table_message );
