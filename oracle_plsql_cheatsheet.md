@@ -109,47 +109,10 @@ BEGIN
 END;
 ```
 
-## INSERT - BIND ARRAY
+##Oracle database
+
+###Database version:
 ```
-DECLARE
-
-  table_subject dbms_sql.varchar2_table ;
-  table_message dbms_sql.varchar2_table;
-  v_index NUMBER := 0;
-   l_cursor    int;
-  l_status    int;
-
-BEGIN
-
-   FOR Lcntr IN 1..100000
-      
-      LOOP
-          v_index := v_index +1;
-         table_subject(v_index) := 'subj_' || v_index;
-         table_message(v_index) := 'message_' || v_index;
-      END LOOP;
-      
-   l_cursor := dbms_sql.open_cursor;
-   
-   dbms_sql.parse( l_cursor,
-                   'INSERT INTO le_table(subject, message) VALUES(:table_subject, :table_message)',
-                    dbms_sql.native );
-    dbms_sql.bind_array( l_cursor, ':table_subject', table_subject );
-    dbms_sql.bind_array( l_cursor, ':table_message', table_message );
-
-    l_status := dbms_sql.execute( l_cursor );
-    dbms_sql.close_cursor(l_cursor);
-
-END;
-```
-
-###Function returning sys_refcursor
-```
-FUNCTION RETURN_CURSOR RETURN SYS_REFCURSOR IS
-   v_rc sys_refcursor;
-BEGIN
-   open v_rc for 'select * FROM dual';
-   return v_rc;
-END;
+SELECT * FROM V$VERSION;
 ```
 
