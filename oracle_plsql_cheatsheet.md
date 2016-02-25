@@ -3,7 +3,7 @@
 
 Print boolean variable:
 
-```
+```plsql
    dbms_output.put_line(
        case
           when output is null then 'NULL'
@@ -16,7 +16,7 @@ Print boolean variable:
 
 For each every record in table:
 
-```
+```plsql
 FOR rec IN (SELECT * FROM table)
     LOOP
         dbms_output.put_line(rec.column);
@@ -25,7 +25,7 @@ FOR rec IN (SELECT * FROM table)
 
 FOR/LOOP Example:
 
-```
+```plsql
 FOR Lcntr IN 1..500000
 LOOP
    Insert into LE_TABLE (ID,TYPE) values ('ID_' || Lcntr, 'XX');
@@ -35,7 +35,7 @@ END LOOP;
 
 Random string item from array
 
-```
+```plsql
 DECLARE
     TYPE strArray IS VARRAY(3) of VARCHAR2(10);
     v_myarray strArray;
@@ -50,7 +50,7 @@ END;
 ##INSERT - Array processing
 
 [https://asktom.oracle.com/pls/asktom/f?p=100:11:::::P11_QUESTION_ID:455220177497](https://asktom.oracle.com/pls/asktom/f?p=100:11:::::P11_QUESTION_ID:455220177497)
-```
+```plsql
 ops$tkyte@DEV8I.WORLD> create or replace procedure p3
   2  as
   3      l_cursor    int;
@@ -88,7 +88,7 @@ row.
 ##MY FUNCTIONS
 
 ###BOOL_TO_STRING FUNCTION
-```
+```plsql
 FUNCTION BOOL_TO_STRING(
 bool      IN    boolean,
 s_true    IN    VARCHAR2    DEFAULT   'true',
@@ -112,7 +112,7 @@ END;
 ##Oracle database
 
 ###Database version:
-```
+```sql
 SELECT * FROM V$VERSION;
 ```
 
