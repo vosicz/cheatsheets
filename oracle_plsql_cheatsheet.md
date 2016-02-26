@@ -1,7 +1,15 @@
 #PL/SQL CHEATSHEET
 
+##SQL
+```
+SELECT * FROM le_table WHERE record_date BETWEEN TO_DATE ('24/02/2016 00:00:01', 'DD.MM.RR HH24:MI:SS') AND TO_DATE ('25/02/2016 12:12:12', 'DD.MM.RR HH24:MI:SS');
+```
 
-Print boolean variable:
+##PL-SQL
+
+
+
+###Print boolean variable:
 
 ```plsql
    dbms_output.put_line(
@@ -14,7 +22,7 @@ Print boolean variable:
 ```
 
 
-For each every record in table:
+###For each every record in table:
 
 ```plsql
 FOR rec IN (SELECT * FROM table)
@@ -23,7 +31,7 @@ FOR rec IN (SELECT * FROM table)
     END LOOP;
 ```
 
-FOR/LOOP Example:
+###FOR/LOOP Example:
 
 ```plsql
 FOR Lcntr IN 1..500000
@@ -32,8 +40,7 @@ LOOP
 END LOOP;
 
 ```
-
-Random string item from array
+###Random string item from array
 
 ```plsql
 DECLARE
@@ -43,6 +50,13 @@ BEGIN
     v_myarray := strArray('item1', 'item2', 'item3');
     dbms_output.put_line(DBMS_RANDOM.value(1,3));
 END;
+```
+
+##ORACLE DATABASE
+
+###Database version:
+```sql
+SELECT * FROM V$VERSION;
 ```
 
 ##SNIPPETS
@@ -104,10 +118,6 @@ BEGIN
 END;
 ```
 
-##Oracle database
 
-###Database version:
-```sql
-SELECT * FROM V$VERSION;
-```
+
 
