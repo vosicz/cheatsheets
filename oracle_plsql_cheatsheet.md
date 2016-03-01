@@ -18,6 +18,17 @@ Display PLAN_TABLE:
 SELECT PLAN_TABLE_OUTPUT FROM TABLE(DBMS_XPLAN.DISPLAY());
 ```
 
+###Hints
+
+####Parallel
+```
+SELECT /*+ parallel(emp,4) */ empno, ename FROM emp;
+```
+####Append
+```
+INSERT /*+ APPEND */ INTO t1 SELECT * FROM all_objects;
+```
+
 ##PL-SQL
 
 
