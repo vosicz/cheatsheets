@@ -36,13 +36,21 @@ INSERT /*+ APPEND */ INTO t1 SELECT * FROM all_objects;
 ###Print boolean variable:
 
 ```plsql
-   dbms_output.put_line(
-       case
-          when output is null then 'NULL'
-          when output then 'TRUE'
-          else 'FALSE'
-       end
-   );
+dbms_output.put_line(
+    case
+       when output is null then 'NULL'
+       when output then 'TRUE'
+       else 'FALSE'
+    end
+);
+```
+
+###Performance/tuning
+```plsql
+LOOP
+  FETCH ref_cursor BULK COLLECT INTO ret_table LIMIT 100;
+  EXIT WHEN ref_cursor%NOTFOUND;
+END LOOP;   
 ```
 
 
