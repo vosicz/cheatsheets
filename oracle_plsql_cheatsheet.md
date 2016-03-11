@@ -2,6 +2,13 @@
 
 ##SQL
 
+###Disabling contraint on the table
+```
+SELECT * FROM all_constraints WHERE table_name = 'le_table';
+
+EXECUTE IMMEDIATE 'ALTER TABLE le_table DISABLE CONSTRAINT PK_LE_TABLE;
+```
+
 ###Select records from date and time range
 ```sql
 SELECT * FROM le_table 
