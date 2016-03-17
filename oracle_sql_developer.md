@@ -12,3 +12,7 @@ Set:
 ```
 Date format: DD.MM.RR HH24:MI:SS
 ```
+
+Action | Shortcut 
+-------|----------
+Move selected lines | Ctrl + Shift + Up/Down
