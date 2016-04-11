@@ -11,3 +11,7 @@
 (https://docs.oracle.com/cd/B28359_01/server.111/b32024/partition.htm)
 
 
+##Tablespaces
+
+* [Tablespace Data Dictionary Views]
+(https://docs.oracle.com/cd/B28359_01/server.111/b28310/tspaces014.htm)
