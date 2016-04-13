@@ -133,6 +133,70 @@ as
 
 ```
 
+## TABLES AND VIEWS
+
+```
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--  Viewing Information About Partitioned Tables and Indexes
+--
+--  https://docs.oracle.com/cd/B19306_01/server.102/b14231/partiti.htm#i1008364
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+SELECT * FROM dba_part_tables;
+SELECT * FROM all_part_tables;
+SELECT * FROM USER_PART_TABLES;
+
+SELECT * FROM dba_tab_partitions;
+SELECT * FROM all_tab_partitions;
+SELECT * FROM USER_TAB_PARTITIONS;
+
+SELECT * FROM all_tab_subpartitions;
+SELECT * FROM USER_TAB_SUBPARTITIONS;
+
+SELECT * FROM dba_part_key_columns;
+SELECT * FROM all_part_key_columns;
+SELECT * FROM USER_PART_KEY_COLUMNS;
+
+SELECT * FROM dba_subpart_key_columns;
+SELECT * FROM all_subpart_key_columns;
+SELECT * FROM USER_SUBPART_KEY_COLUMNS;
+
+SELECT * FROM dba_part_col_statistics;
+SELECT * FROM all_part_col_statistics;
+SELECT * FROM USER_PART_COL_STATISTICS;
+
+SELECT * FROM dba_subpart_col_statistics;
+SELECT * FROM all_subpart_col_statistics;
+SELECT * FROM USER_SUBPART_COL_STATISTICS;
+
+SELECT * FROM dba_part_histograms;
+SELECT * FROM all_part_histograms;
+SELECT * FROM USER_PART_HISTOGRAMS;
+
+SELECT * FROM dba_subpart_histograms;
+SELECT * FROM all_subpart_histograms;
+SELECT * FROM USER_SUBPART_HISTOGRAMS;
+
+SELECT * FROM dba_part_indexes;
+SELECT * FROM all_part_indexes;
+SELECT * FROM USER_PART_INDEXES;
+
+SELECT * FROM dba_ind_partitions;
+SELECT * FROM all_ind_partitions;
+SELECT * FROM USER_IND_PARTITIONS;
+
+SELECT * FROM dba_ind_subpartitions;
+SELECT * FROM all_ind_subpartitions;
+SELECT * FROM USER_IND_SUBPARTITIONS;
+
+SELECT * FROM dba_subpartition_templates;
+SELECT * FROM all_subpartition_templates;
+SELECT * FROM USER_SUBPARTITION_TEMPLATES;
+```
+
 ##MY FUNCTIONS
 
 ###BOOL_TO_STRING FUNCTION
