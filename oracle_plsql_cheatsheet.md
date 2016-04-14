@@ -2,8 +2,23 @@
 
 ##SQL
 
-###Disabling contraint on the table
+###Date manipulation
+```sql
+--SYSDATE + 3 days
+SELECT SYSDATE, SYSDATE + 3 FROM dual;
+
+--SYSDATE + 3 hour
+SELECT SYSDATE, SYSDATE + 3/24 FROM dual;
+
+--SYSDATE + 3 minutes (24*60)
+SELECT SYSDATE, SYSDATE + 3/1440 FROM dual;
+
+--SYSDATE + 3 seconds (24*60*60)
+SELECT SYSDATE, SYSDATE + 3/86400 FROM dual;
 ```
+
+###Disabling contraint on the table
+```sql
 SELECT * FROM all_constraints WHERE table_name = 'le_table';
 
 EXECUTE IMMEDIATE 'ALTER TABLE le_table DISABLE CONSTRAINT PK_LE_TABLE;
