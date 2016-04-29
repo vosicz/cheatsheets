@@ -150,7 +150,7 @@ as
 
 ## TABLES AND VIEWS
 
-```
+```sql
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --  Viewing Information About Partitioned Tables and Indexes
@@ -158,7 +158,6 @@ as
 --  https://docs.oracle.com/cd/B19306_01/server.102/b14231/partiti.htm#i1008364
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
 
 SELECT * FROM dba_part_tables;
 SELECT * FROM all_part_tables;
@@ -210,6 +209,14 @@ SELECT * FROM USER_IND_SUBPARTITIONS;
 SELECT * FROM dba_subpartition_templates;
 SELECT * FROM all_subpartition_templates;
 SELECT * FROM USER_SUBPARTITION_TEMPLATES;
+```
+
+###LAST MODIFICATION OF THE TABLE
+
+```sql
+SELECT * 
+FROM  user_tab_modifications
+WHERE table_name = 'TURISTA_CONTRACT_MIG'
 ```
 
 ##MY FUNCTIONS
