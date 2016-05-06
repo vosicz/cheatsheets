@@ -17,6 +17,14 @@ SELECT SYSDATE, SYSDATE + 3/1440 FROM dual;
 SELECT SYSDATE, SYSDATE + 3/86400 FROM dual;
 ```
 
+###Current date +- x minutes
+
+```sql
+
+SELECT CAST(to_char(SYSDATE - (1/24/60)*10, 'DD.MM.RR HH24:MI:SS') AS DATE) FROM dual;
+
+```
+
 ###Disabling contraint on the table
 ```sql
 SELECT * FROM all_constraints WHERE table_name = 'le_table';
