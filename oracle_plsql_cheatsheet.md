@@ -2,6 +2,13 @@
 
 ##SQL
 
+###Selects
+
+####Values with no-brake space (Alt+255)
+```sql
+Select * from service where service_code like '% %'
+```
+
 ###Date manipulation
 ```sql
 --SYSDATE + 3 days
