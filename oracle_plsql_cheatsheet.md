@@ -31,7 +31,6 @@ SELECT SYSDATE, SYSDATE + 3/86400 FROM dual;
 SELECT CAST(to_char(SYSDATE - (1/24/60)*10, 'DD.MM.RR HH24:MI:SS') AS DATE) FROM dual;
 
 ```
-
 ###Disabling contraint on the table
 ```sql
 SELECT * FROM all_constraints WHERE table_name = 'le_table';
@@ -129,6 +128,15 @@ SELECT * FROM V$VERSION;
 ```
 
 ##SNIPPETS
+
+### Free space on tablespace
+```sql
+SELECT (sum(bytes) /1024) free_space_mb
+FROM (
+	SELECT bytes bytes
+	FROM user_free_space
+)
+```
 
 ##INSERT - Array processing
 
