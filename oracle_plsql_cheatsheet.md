@@ -9,6 +9,11 @@
 Select * from service where service_code like '% %'
 ```
 
+###Inserts
+```sql
+INSERT INTO table_one SELECT * FROM table_two
+```
+
 ###Date manipulation
 ```sql
 --SYSDATE + 3 days
