@@ -271,6 +271,13 @@ BEGIN
 END;
 ```
 
-
-
-
+##Examples
+###Rowtype
+```sql
+declare
+	v_row t_diagram%rowtype;
+begin
+	select * INTO v_row FROM t_diagram WHERE diagram_id  = 6850 AND package_id =972;
+	dbms_output.put_line(v_row.version);
+end;
+```
