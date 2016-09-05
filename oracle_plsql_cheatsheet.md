@@ -2,7 +2,6 @@
 
 ##SQL
 
-###Selects
 
 ###DDL
 
@@ -14,7 +13,7 @@ COMMENT ON COLUMN le_table.le_column IS 'Le text of le commnet';
 
 ###DML
 
-###Disabling contraint on the table
+####Disabling contraint on the table
 ```sql
 SELECT * FROM all_constraints WHERE table_name = 'le_table';
 
@@ -25,7 +24,7 @@ EXECUTE IMMEDIATE 'ALTER TABLE le_table DISABLE CONSTRAINT PK_LE_TABLE;
 INSERT /*+ APPEND */ INTO t1 SELECT * FROM all_objects;
 ```
 
-###Inserts
+####Insert Select result
 ```sql
 INSERT INTO table_one SELECT * FROM table_two
 ```
@@ -66,7 +65,7 @@ BETWEEN TO_DATE ('24/02/2016 00:00:01', 'DD.MM.RR HH24:MI:SS')
 AND TO_DATE ('25/02/2016 12:12:12', 'DD.MM.RR HH24:MI:SS');
 ```
 
-Display PLAN_TABLE:
+####Display PLAN_TABLE:
 ```sql
 SELECT PLAN_TABLE_OUTPUT FROM TABLE(DBMS_XPLAN.DISPLAY());
 ```
