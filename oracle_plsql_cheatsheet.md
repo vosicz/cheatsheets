@@ -4,9 +4,25 @@
 
 ###Selects
 
-####Values with no-brake space (Alt+255)
+###DDL
+
+####Add column to table
 ```sql
-Select * from service where service_code like '% %'
+ALTER TABLE le_table ADD le_column VARCHAR2(50);
+COMMENT ON COLUMN le_table.le_column IS 'Le text of le commnet';
+```
+
+###DML
+
+###Disabling contraint on the table
+```sql
+SELECT * FROM all_constraints WHERE table_name = 'le_table';
+
+EXECUTE IMMEDIATE 'ALTER TABLE le_table DISABLE CONSTRAINT PK_LE_TABLE;
+```
+####Insert with Append hint
+```
+INSERT /*+ APPEND */ INTO t1 SELECT * FROM all_objects;
 ```
 
 ###Inserts
@@ -14,7 +30,14 @@ Select * from service where service_code like '% %'
 INSERT INTO table_one SELECT * FROM table_two
 ```
 
-###Date manipulation
+###DQL
+
+####Values with no-brake space (Alt+255)
+```sql
+Select * from service where service_code like '% %'
+```
+
+####Select by date
 ```sql
 --SYSDATE + 3 days
 SELECT SYSDATE, SYSDATE + 3 FROM dual;
@@ -29,50 +52,44 @@ SELECT SYSDATE, SYSDATE + 3/1440 FROM dual;
 SELECT SYSDATE, SYSDATE + 3/86400 FROM dual;
 ```
 
-###Current date +- x minutes
+####Current date +- x minutes
 
 ```sql
-
 SELECT CAST(to_char(SYSDATE - (1/24/60)*10, 'DD.MM.RR HH24:MI:SS') AS DATE) FROM dual;
-
-```
-###Disabling contraint on the table
-```sql
-SELECT * FROM all_constraints WHERE table_name = 'le_table';
-
-EXECUTE IMMEDIATE 'ALTER TABLE le_table DISABLE CONSTRAINT PK_LE_TABLE;
 ```
 
-###Select records from date and time range
+####Select records from date and time range
 ```sql
 SELECT * FROM le_table 
 WHERE record_date 
 BETWEEN TO_DATE ('24/02/2016 00:00:01', 'DD.MM.RR HH24:MI:SS') 
 AND TO_DATE ('25/02/2016 12:12:12', 'DD.MM.RR HH24:MI:SS');
 ```
-###EXPLAIN PLAN EXAMPLE
-```sql
-EXPLAIN PLAN FOR SELECT * FROM le_table;
-```
+
 Display PLAN_TABLE:
 ```sql
 SELECT PLAN_TABLE_OUTPUT FROM TABLE(DBMS_XPLAN.DISPLAY());
 ```
 
-###Hints
-
-####Parallel
+####Select with Parallel hint
 ```
 SELECT /*+ parallel(emp,4) */ empno, ename FROM emp;
 ```
-####Append
+
+###DCL
+
+###DTL
+
+###Others
+
+
+####EXPLAIN PLAN EXAMPLE
+```sql
+EXPLAIN PLAN FOR SELECT * FROM le_table;
 ```
-INSERT /*+ APPEND */ INTO t1 SELECT * FROM all_objects;
-```
+
 
 ##PL-SQL
-
-
 
 ###Print boolean variable:
 
